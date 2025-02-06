@@ -1,0 +1,16 @@
+[
+{
+  "modid": "WailaHarvestability",
+  "name": "Waila Harvestability",
+  "description": "An add-on for Waila that adds information about the harvestability of what you are looking at",
+  "version": "1.1.0",
+  "mcversion": "1.6.4",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["squeek"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

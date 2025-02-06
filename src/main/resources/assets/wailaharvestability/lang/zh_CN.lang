@@ -1,0 +1,60 @@
+# tools
+wailaharvestability.toolclass.pickaxe=镐
+wailaharvestability.toolclass.shovel=锹
+wailaharvestability.toolclass.axe=斧
+wailaharvestability.toolclass.sword=剑
+wailaharvestability.toolclass.shears=剪刀
+
+wailaharvestability.toolclass.battle_axe=战斧
+wailaharvestability.toolclass.club=棒
+wailaharvestability.toolclass.cudgel=短棒
+wailaharvestability.toolclass.dagger=短剑
+wailaharvestability.toolclass.hatchet=手斧
+wailaharvestability.toolclass.knife=小刀
+wailaharvestability.toolclass.mattock=鹤嘴锄
+wailaharvestability.toolclass.scythe=镰刀
+wailaharvestability.toolclass.war_hammer=战锤
+
+wailaharvestability.toolclass.chisel=凿子
+wailaharvestability.toolclass.scoop=勺
+wailaharvestability.toolclass.crowbar=撬棍
+
+# tooltips
+wailaharvestability.effectivetool=有效工具 : 
+wailaharvestability.harvestlevel=采集等级 : 
+wailaharvestability.currentlyharvestable= 能否采集
+wailaharvestability.harvestable= 能否采集
+gui.partcrafter.mining1=泥土(1)
+gui.partcrafter.mining2=石头(2)
+gui.partcrafter.mining3=黑曜石(3)
+gui.partcrafter.mining4=艾德曼矿石(4)
+gui.partcrafter.mining5=艾德曼块(5)
+gui.partcrafter.mining6=振金块(6)
+gui.partcrafter.mining7=7
+gui.partcrafter.mining8=8
+gui.toolstation15=Mining Level: 
+
+# options
+config.name.harvestability.harvestlevel=采集等级
+config.name.harvestability.effectivetool=有效工具
+config.name.harvestability.currentlyharvestable=能否采集
+config.name.harvestability.oresonly=仅显示矿物
+config.name.harvestability.harvestlevel.sneakingonly=仅潜行时显示:采集级别
+config.name.harvestability.effectivetool.sneakingonly=仅潜行时显示:有效工具
+config.name.harvestability.currentlyharvestable.sneakingonly=仅潜行时显示:能否采集
+config.name.harvestability.minimal=缩小模式
+config.name.harvestability.unharvestableonly=仅显示能否采集
+config.name.harvestability.toolrequiredonly=仅显示所需工具
+config.name.harvestability.shearability=能否用剪刀采集
+config.name.harvestability.shearability.sneakingonly=仅潜行时显示: 能否用剪刀采集
+config.name.harvestability.silktouchability=能否精准采集
+config.name.harvestability.silktouchability.sneakingonly=仅潜行时显示: 能否精准采集
+
+config.name.minimal.mode.separator=缩小模式分隔符
+config.name.is.currently.harvestable.string=可以破坏符号
+config.name.not.currently.harvestable.string=无法破坏符号
+config.name.shearability.string=剪刀采集符号
+config.name.silk.touchability.string=精准采集符号
+
+config.tab.wailaharvestability.main=常规
+config.tab.wailaharvestability.string=字符

@@ -1,0 +1,23 @@
+# tools
+wailaharvestability.toolclass.pickaxe=Spitzhacke
+wailaharvestability.toolclass.shovel=Schaufel
+wailaharvestability.toolclass.axe=Axt
+wailaharvestability.toolclass.chisel=Meißel
+
+# tooltips
+wailaharvestability.effectivetool=Effektives Werkzeug : 
+wailaharvestability.harvestlevel=Abbau-Level : 
+wailaharvestability.currentlyharvestable= Aktuell abbaubar
+wailaharvestability.harvestable= Abbaubar
+
+# options
+config.name.harvestability.harvestlevel=Abbau-Level
+config.name.harvestability.effectivetool=Effektives Werkzeug
+config.name.harvestability.currentlyharvestable=Aktuell abbaubar
+config.name.harvestability.oresonly=Nur Erze
+config.name.harvestability.harvestlevel.sneakingonly=Nur schleichend: Abbau-Level
+config.name.harvestability.effectivetool.sneakingonly=Nur schleichend: Effektives Werkzeug
+config.name.harvestability.currentlyharvestable.sneakingonly=Nur schleichend: Abbaubarkeit
+config.name.harvestability.minimal=Minimalmodus
+config.name.harvestability.unharvestableonly=Nur nicht erntbares
+config.name.harvestability.toolrequiredonly=Nur, wenn Werkzeug benötigt

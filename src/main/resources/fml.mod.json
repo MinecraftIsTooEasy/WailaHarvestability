@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "wailaharvestability",
+  "version": "${version}",
+  "depends": {
+    "fishmodloader": ">=3.4.0",
+    "many-lib": ">=2.2.0"
+  },
+  "environment": "*",
+  "name": "Waila Harvestability",
+  "description": "An add-on for Waila that adds information about the harvestability of what you are looking at",
+  "authors": [
+    "squeek",
+    "Xy_Lose"
+  ],
+  "license": "MIT",
+  "entrypoints": {
+    "client": [
+      "squeek.wailaharvestability.ModWailaHarvestability"
+    ]
+  },
+  "mixins": [
+    "wailaharvestability.mixins.json"
+  ]
+}

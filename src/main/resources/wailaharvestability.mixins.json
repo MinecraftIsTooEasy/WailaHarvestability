@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "squeek.wailaharvestability.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "target": "DEFAULT",
+  "minVersion": "0.8.3",
+  "mixins": [
+    "MinecraftMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

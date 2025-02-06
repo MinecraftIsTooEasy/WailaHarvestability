@@ -1,0 +1,60 @@
+# tools
+wailaharvestability.toolclass.pickaxe=Pickaxe
+wailaharvestability.toolclass.shovel=Shovel
+wailaharvestability.toolclass.axe=Axe
+wailaharvestability.toolclass.sword=Sword
+wailaharvestability.toolclass.shears=Shears
+
+wailaharvestability.toolclass.battle_axe=Battle Axe
+wailaharvestability.toolclass.club=Club
+wailaharvestability.toolclass.cudgel=Cudgel
+wailaharvestability.toolclass.dagger=Dagger
+wailaharvestability.toolclass.hatchet=Hatchet
+wailaharvestability.toolclass.knife=Knife
+wailaharvestability.toolclass.mattock=Mattock
+wailaharvestability.toolclass.scythe=Scythe
+wailaharvestability.toolclass.war_hammer=War Hammer
+
+wailaharvestability.toolclass.chisel=Chisel
+wailaharvestability.toolclass.scoop=Scoop
+wailaharvestability.toolclass.crowbar=Crowbar
+gui.partcrafter.mining1=Dirt(1)
+gui.partcrafter.mining2=Stone(2)
+gui.partcrafter.mining3=Obsidian(3)
+gui.partcrafter.mining4=Adamantium Ore(4)
+gui.partcrafter.mining5=Adamantium Block(5)
+gui.partcrafter.mining6=Vibranium Block(6)
+gui.partcrafter.mining7=7
+gui.partcrafter.mining8=8
+gui.toolstation15=Mining Level:
+
+# tooltips
+wailaharvestability.effectivetool=Effective Tool : 
+wailaharvestability.harvestlevel=Harvest Level : 
+wailaharvestability.currentlyharvestable= Currently Harvestable
+wailaharvestability.harvestable= Harvestable
+
+# options
+config.name.harvestability.harvestlevel=Harvest level
+config.name.harvestability.effectivetool=Effective tool
+config.name.harvestability.currentlyharvestable=Currently harvestable
+config.name.harvestability.oresonly=Ores only
+config.name.harvestability.harvestlevel.sneakingonly=Sneak only: Harvest level
+config.name.harvestability.effectivetool.sneakingonly=Sneak only: Effective tool
+config.name.harvestability.currentlyharvestable.sneakingonly=Sneak only: Harvestable
+config.name.harvestability.minimal=Minimal mode
+config.name.harvestability.unharvestableonly=Unharvestable only
+config.name.harvestability.toolrequiredonly=Tool required only
+config.name.harvestability.shearability=Shearability
+config.name.harvestability.shearability.sneakingonly=Sneak only: Shearability
+config.name.harvestability.silktouchability=Silk Touchability
+config.name.harvestability.silktouchability.sneakingonly=Sneak only: Silk Touchability
+
+config.name.minimal.mode.separator=Minimal Mode Separator
+config.name.is.currently.harvestable.string=Is Currently Harvestable String
+config.name.not.currently.harvestable.string=Not Currently Harvestable String
+config.name.shearability.string=Shearability String
+config.name.silk.touchability.string=Silk Touchability String
+
+config.tab.wailaharvestability.main=General
+config.tab.wailaharvestability.string=Strings

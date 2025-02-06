@@ -1,0 +1,24 @@
+# tools
+wailaharvestability.toolclass.pickaxe=Кирка
+wailaharvestability.toolclass.shovel=Лопата
+wailaharvestability.toolclass.axe=Топор
+wailaharvestability.toolclass.chisel=Стамеска
+wailaharvestability.toolclass.scoop=Сачок
+
+# tooltips
+wailaharvestability.effectivetool=Эффективный инструмент : 
+wailaharvestability.harvestlevel=Уровень сбора : 
+wailaharvestability.currentlyharvestable= Можно собрать
+wailaharvestability.harvestable= Можно собрать
+
+# options
+config.name.harvestability.harvestlevel=Уровень сбора
+config.name.harvestability.effectivetool=Эффективный инструмент
+config.name.harvestability.currentlyharvestable=Можно собрать
+config.name.harvestability.oresonly=Только руды
+config.name.harvestability.harvestlevel.sneakingonly=Присев: Уровень сбора
+config.name.harvestability.effectivetool.sneakingonly=Присев: Эффективный инструмент
+config.name.harvestability.currentlyharvestable.sneakingonly=Присев: Можно собрать
+config.name.harvestability.minimal=Минимальный режим
+config.name.harvestability.unharvestableonly=Только несобираемые
+config.name.harvestability.toolrequiredonly=Только необходимый инструмент
