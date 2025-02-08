@@ -15,6 +15,7 @@ public class ModWailaHarvestability implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		ModResourceManager.addResourcePackDomain("wailaharvestability");
+		WailaHarvestabilityEvent.register();
 		WailaHarvestabilityConfig.getInstance().load();
 		ConfigManager.getInstance().registerConfig(WailaHarvestabilityConfig.getInstance());
 		MissingHarvestInfo.init();
@@ -22,11 +23,7 @@ public class ModWailaHarvestability implements ClientModInitializer {
 			hasIguanaTweaks = true;
 			ProxyIguanaTweaks.init();
 		}
-
 		ToolHelper.init();
-//		WailaHandler.callbackRegister(ModuleRegistrar.instance());
-//		WailaHandler.register();
-
 	}
 
 }

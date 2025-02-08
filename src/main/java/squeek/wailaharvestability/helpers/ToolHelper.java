@@ -5,10 +5,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import net.minecraft.Block;
-import net.minecraft.Item;
-import net.minecraft.ItemStack;
-import net.minecraft.NBTTagCompound;
+import java.util.Objects;
+
+import net.minecraft.*;
 import net.xiaoyu233.fml.FishModLoader;
 
 public class ToolHelper {
@@ -77,9 +76,9 @@ public class ToolHelper {
 		return getToolClassOf(tool.getItem());
 	}
 
-	public static boolean isToolEffectiveAgainst(ItemStack tool, Block block, int metadata, String effectiveToolClass) {
+	public static boolean isToolEffectiveAgainst(EntityPlayer player, RaycastCollision rc, ItemStack tool, Block block, int metadata, String effectiveToolClass) {
+		Item item = tool.getItem();
 		if (tinkersConstructLoaded && HarvestTool.isInstance(tool.getItem())) {
-			Item item = tool.getItem();
 			List<String> harvestTypes = new ArrayList<String>();
 			try {
 				harvestTypes.add((String) getHarvestType.invoke(item));
@@ -102,7 +101,7 @@ public class ToolHelper {
 		String toolClass = null;
 		return
 //				tool.getItemAsTool().isEffectiveAgainstBlock(block, metadata) ||
-//				((toolClass = getToolClassOf(tool)) != null ? toolClass == effectiveToolClass :
+//				Objects.equals(item.getAsTool().getToolType(), effectiveToolClass) ||
 				tool.getStrVsBlock(block, metadata) > 1.5f;
 	}
 
@@ -118,8 +117,8 @@ public class ToolHelper {
 		return canTinkersToolHarvestBlock || tool.getItem().canItemEditBlocks();
 	}
 
-	public static boolean canToolHarvestBlock(ItemStack tool, Block block, int metadata) {
-		return block.blockMaterial.requiresTool(block, metadata) || tool.getItem().canItemEditBlocks();
+	public static boolean canToolHarvestBlock(EntityPlayer player, RaycastCollision rc) {
+		return player.getCurrentPlayerStrVsBlock(rc.block_hit_x, rc.block_hit_y, rc.block_hit_z, true) >= 0.0F;
 	}
 
 }

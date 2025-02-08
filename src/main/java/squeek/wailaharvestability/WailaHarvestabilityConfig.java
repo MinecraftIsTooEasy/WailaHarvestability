@@ -18,10 +18,11 @@ public class WailaHarvestabilityConfig extends SimpleConfigs {
 	public static final ConfigString SILK_TOUCHABILITY_STRING_NAME = new ConfigString("silk.touchability.string", "\u2712");
 
 	public static final ConfigBoolean harvestlevel = new ConfigBoolean("harvestability.harvestlevel", true);
-	public static final ConfigBoolean effectivetool = new ConfigBoolean("harvestability.effectivetool", true);
-	public static final ConfigBoolean currentlyharvestable = new ConfigBoolean("harvestability.currentlyharvestable", true);
+	public static final ConfigBoolean harvestlevel_simple = new ConfigBoolean("harvestability.harvestlevel_simple", true);
 	public static final ConfigBoolean harvestlevel_sneakingonly = new ConfigBoolean("harvestability.harvestlevel.sneakingonly", false);
+	public static final ConfigBoolean effectivetool = new ConfigBoolean("harvestability.effectivetool", true);
 	public static final ConfigBoolean effectivetool_sneakingonly = new ConfigBoolean("harvestability.effectivetool.sneakingonly", false);
+	public static final ConfigBoolean currentlyharvestable = new ConfigBoolean("harvestability.currentlyharvestable", true);
 	public static final ConfigBoolean currentlyharvestable_sneakingonly = new ConfigBoolean("harvestability.currentlyharvestable.sneakingonly", false);
 	public static final ConfigBoolean oresonly = new ConfigBoolean("harvestability.oresonly", false);
 	public static final ConfigBoolean minimal = new ConfigBoolean("harvestability.minimal", true);
@@ -44,9 +45,8 @@ public class WailaHarvestabilityConfig extends SimpleConfigs {
 	}
 
 	static {
-		main = List.of(harvestlevel, effectivetool, currentlyharvestable, harvestlevel_sneakingonly, effectivetool_sneakingonly,
-				currentlyharvestable_sneakingonly, oresonly, minimal, unharvestableonly, toolrequiredonly, shearability, shearability_sneakingonly,
-				silktouchability, silktouchability_sneakingonly);
+		main = List.of(harvestlevel, harvestlevel_simple, harvestlevel_sneakingonly, effectivetool, effectivetool_sneakingonly, currentlyharvestable, currentlyharvestable_sneakingonly,
+				oresonly, minimal, unharvestableonly, toolrequiredonly, shearability, shearability_sneakingonly, silktouchability, silktouchability_sneakingonly);
 		string = List.of(MINIMAL_SEPARATOR_STRING_NAME, CURRENTLY_HARVESTABLE_STRING_NAME, NOT_CURRENTLY_HARVESTABLE_STRING_NAME, SHEARABILITY_STRING_NAME, SILK_TOUCHABILITY_STRING_NAME);
 		ArrayList<ConfigBase> values = new ArrayList<>();
 		values.addAll(string);

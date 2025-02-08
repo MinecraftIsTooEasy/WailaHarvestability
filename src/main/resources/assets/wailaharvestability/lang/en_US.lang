@@ -36,6 +36,7 @@ wailaharvestability.harvestable= Harvestable
 
 # options
 config.name.harvestability.harvestlevel=Harvest level
+config.name.harvestability.harvestlevel_simple=Simple harvest level
 config.name.harvestability.effectivetool=Effective tool
 config.name.harvestability.currentlyharvestable=Currently harvestable
 config.name.harvestability.oresonly=Ores only

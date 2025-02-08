@@ -5,7 +5,7 @@ import java.util.*;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import mcp.mobius.waila.api.IWailaDataProvider;
-import mcp.mobius.waila.api.IWailaRegistrar;
+import mcp.mobius.waila.api.impl.ModuleRegistrar;
 import net.minecraft.*;
 import squeek.wailaharvestability.helpers.BlockHelper;
 import squeek.wailaharvestability.helpers.ColorHelper;
@@ -13,7 +13,7 @@ import squeek.wailaharvestability.helpers.OreHelper;
 import squeek.wailaharvestability.helpers.StringHelper;
 import squeek.wailaharvestability.helpers.ToolHelper;
 
-public class WailaHandler implements IWailaDataProvider {
+public class WailaHarvestabilityHandler implements IWailaDataProvider {
 	@Override
 	public ItemStack getWailaStack(IWailaDataAccessor accessor, IWailaConfigHandler config) {
 		return null;
@@ -100,20 +100,21 @@ public class WailaHandler implements IWailaDataProvider {
 				}
 			}
 
-			boolean canHarvest = false;
+			boolean canHarvest = ToolHelper.canToolHarvestBlock(player, position);
 			boolean isEffective = false;
 			boolean isAboveMinHarvestLevel = false;
 			boolean isHoldingTinkersTool = false;
+			boolean isCurrentlyHarvestable = canHarvest;
 
 			ItemStack itemHeld = player.getHeldItemStack();
+
 			if (itemHeld != null) {
 				isHoldingTinkersTool = ToolHelper.hasToolTag(itemHeld);
-				canHarvest = ToolHelper.canToolHarvestBlock(itemHeld, block, meta) || (!isHoldingTinkersTool && this.canSilkHarvest(block));
+				canHarvest = ToolHelper.canToolHarvestBlock(player, position) || (!isHoldingTinkersTool && player.canSilkHarvestBlock(block, meta));
 				isAboveMinHarvestLevel = (showCurrentlyHarvestable || showHarvestLevel) && ToolHelper.canToolHarvestLevel(itemHeld, block, meta, 0);
-				isEffective = showEffectiveTool && ToolHelper.isToolEffectiveAgainst(itemHeld, block, meta, effectiveTool);
+				isEffective = showEffectiveTool && ToolHelper.isToolEffectiveAgainst(player, position, itemHeld, block, meta, effectiveTool);
+				isCurrentlyHarvestable = (canHarvest && isAboveMinHarvestLevel);
 			}
-
-			boolean isCurrentlyHarvestable = (canHarvest && isAboveMinHarvestLevel);
 
 			if (hideWhileHarvestable && isCurrentlyHarvestable)
 				return;
@@ -134,7 +135,7 @@ public class WailaHandler implements IWailaDataProvider {
 				stringList.add((!minimalLayout ? StatCollector.translateToLocal("wailaharvestability.effectivetool") : "") + ColorHelper.getBooleanColor(isEffective && (!isHoldingTinkersTool || canHarvest), isHoldingTinkersTool && isEffective && !canHarvest) + effectiveToolString);
 			}
 			if (harvestLevel >= 1 && showHarvestLevel)
-				stringList.add((!minimalLayout ? StatCollector.translateToLocal("wailaharvestability.harvestlevel") : "") + ColorHelper.getBooleanColor(isAboveMinHarvestLevel && canHarvest) + StringHelper.stripFormatting(StringHelper.getHarvestLevelName(harvestLevel)));
+				stringList.add((!minimalLayout ? StatCollector.translateToLocal("wailaharvestability.harvestlevel") : "") + ColorHelper.getBooleanColor(isAboveMinHarvestLevel && canHarvest) + (WailaHarvestabilityConfig.harvestlevel_simple.getBooleanValue() ? harvestLevel : StringHelper.stripFormatting(StringHelper.getHarvestLevelName(harvestLevel))));
 		}
 	}
 
@@ -173,15 +174,18 @@ public class WailaHandler implements IWailaDataProvider {
 
 	@Override
 	public NBTTagCompound getNBTData(ServerPlayer serverPlayer, TileEntity tileEntity, NBTTagCompound nbtTagCompound, World world, int i, int i1, int i2) {
-		return null;
+		return nbtTagCompound;
 	}
 
 	private boolean canSilkHarvest(Block block) {
 		return block.renderAsNormalBlock() && !block.hasTileEntity();
 	}
 
-	public static void callbackRegister(IWailaRegistrar registrar) {
-		WailaHandler instance = new WailaHandler();
-		registrar.registerBodyProvider(instance, Block.class);
+	//register for waila
+	public static void register() {
+		ModuleRegistrar register = ModuleRegistrar.instance();
+		WailaHarvestabilityHandler instance = new WailaHarvestabilityHandler();
+		//par2 indicates that this class is only valid for which class or String, if it is only a type block, please do not fill in Block.class
+		register.registerBodyProvider(instance, Block.class);
 	}
 }

@@ -36,6 +36,7 @@ gui.toolstation15=Mining Level:
 
 # options
 config.name.harvestability.harvestlevel=采集等级
+config.name.harvestability.harvestlevel_simple=简易采集等级
 config.name.harvestability.effectivetool=有效工具
 config.name.harvestability.currentlyharvestable=能否采集
 config.name.harvestability.oresonly=仅显示矿物
